@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+	<title>Users</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="styles.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script src="http://cloud.github.com/downloads/emberjs/ember.js/ember-0.9.6.min.js"></script>
+	<script src="app.js"></script>
+</head>
+<body>
+
+	<script type="text/x-handlebars">
+		<div id="frm">
+			<b>Get Users: </b>
+			<button {{action "loadUsers" target="App.usersController"}}>Go!</button>
+		</div>
+		<div id="content">
+			<div id="users">
+				<h3>Users</h3>
+				<ul>
+				    {{#each App.usersController}}
+				        <li>
+				            <span>{{user_id}}</span>
+				            <span>{{email}}</span>
+				            <h3>{{full_name}}</h3>
+				            <p>{{password}} || {{status}}</p>
+				        </li>
+				    {{/each}}
+				</ul>
+			</div>
+		</div>
+	</script>
+
+</body>
+</html>
