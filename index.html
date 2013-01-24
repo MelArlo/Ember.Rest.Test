@@ -24,7 +24,12 @@
 				            <span>{{user_id}}</span>
 				            <span>{{email}}</span>
 				            <h3>{{full_name}}</h3>
-				            <p>{{password}} || {{status}}</p>
+				            <p>{{password}} || 
+							{{#if status}}
+								ACTIVE MEMBER</p>
+							{{else}}
+								INACTIVE MEMBER</p>
+							{{/if}}
 				        </li>
 				    {{/each}}
 				</ul>
